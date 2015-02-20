@@ -20,9 +20,6 @@ fi
 
 echo '"IP","Hostname","Port","Protocol","Status","Service","Version","Service Detail"'
 gawk '{
-if ( NR < 1 ) {
-  print "TEST"
-}
   for( X=4; X<NF; X++) {
     if ( $X ~ /[0-9]{1,}\/open\// ) {
        if ( $X !~ /[\/,]$/ ) {
