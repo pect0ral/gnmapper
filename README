@@ -1,0 +1,24 @@
+GNMAPPER
+
+This is a shell script (primarily written with awk) for parsing one or more gnmap files (nmap's greppable format) into a CSV.
+
+This is based on GNU Awk (gawk) so make sure you have gawk installed and in your path.
+
+Usage:
+
+  ./gnmapper /path/to/file.gnmap /path/to/files/*.gnmap | tee myReport.csv
+
+#|| OR try something like:
+
+  find /some/path -maxdepth 5 -type f -name "*.gnmap" | xargs ./gnmapper | tee myReport.csv
+
+Please note that I am using tee to write my CSV. You can obviously use output redirection with >, >> or &>.
+
+I used tee so you can see your output while creating the file.
+
+Thanks!
+
+-- 
+Mike Piekarski
+Automagine, LLC
+mike [-AT-] automagine [-DOT-] com
